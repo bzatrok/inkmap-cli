@@ -1,0 +1,20 @@
+[project]
+name = "inkmap"
+version = "0.1.0"
+requires-python = ">=3.12"
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+extend-exclude = [".venv", "data", "tiles"]
+
+[tool.ruff.lint]
+# C901 is the size ceiling (design principle 4).
+select = ["E", "F", "I", "B", "UP", "C901"]
+
+[tool.ruff.lint.mccabe]
+max-complexity = 10

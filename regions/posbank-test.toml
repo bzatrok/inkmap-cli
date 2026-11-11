@@ -1,0 +1,11 @@
+# Small cut around Velp and the Posbank for quick style iteration: hills, wood, a town, the IJssel.
+name = "posbank-test"
+osm = "arnhem"
+title = "POSBANK"
+south = 51.97
+west = 5.93
+north = 52.04
+east = 6.05
+
+[scales]
+town = 6

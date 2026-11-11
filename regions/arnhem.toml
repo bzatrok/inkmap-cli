@@ -1,0 +1,15 @@
+# The first region: Dieren to Oosterbeek, south of Apeldoorn down to Nijmegen, with the Veluwe
+# hills (Posbank). Corners from Nominatim, looked up 2026-11-10.
+name = "arnhem"
+title = "GELRE"
+south = 51.78
+west = 5.76
+north = 52.12
+east = 6.14
+
+# Metres per pixel of each rendered scale. Each must be the coarsest divided by a power of two:
+# the tile pyramid's zoom levels come from those ratios.
+[scales]
+region = 24
+town = 6
+# street = 1.5  # shortcut: 437 Mpx in one image; needs metatiled rendering before it is switched on

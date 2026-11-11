@@ -1,0 +1,12 @@
+# A quick street-scale look at Gorica itself, on the gorica cut. Not tiled, not shipped.
+name = "gorica-test"
+title = "GORICA"
+osm = "gorica"
+extract = "hungary-latest.osm.pbf"
+south = 46.140
+west = 17.995
+north = 46.158
+east = 18.017
+
+[scales]
+street = 1

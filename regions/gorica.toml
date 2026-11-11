@@ -1,0 +1,28 @@
+# Gorica and Bükkösd in the Mecsek foothills, Baranya. Centre from Nominatim, looked up 2026-11-10.
+name = "gorica"
+title = "GORICA"
+tile_format = "webp"  # the pyramid goes into the gorica.hu repo; png would be 200 MB
+extract = "hungary-latest.osm.pbf"
+# 5 km of air round the old box (46.10-46.19 N, 17.95-18.06 E), so the map can be moved about;
+# the street scale is drawn only inside that old box, where the village and the kék kör are.
+south = 46.055
+west = 17.885
+north = 46.235
+east = 18.125
+# The kék kör, which gorica.hu draws over the tiles: names keep off its line.
+tracks = ["gorica.kekkor.gpx"]
+
+[scales]
+region = 8
+town = 2
+street = 1
+
+[boxes]
+street = [46.10, 17.95, 46.19, 18.06]
+
+# Region names drawn large across the land. Position is the name's centre; angle in degrees.
+[[regions]]
+name = "Zselic"
+lat = 46.115
+lon = 17.965
+angle = 12

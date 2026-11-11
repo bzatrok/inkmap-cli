@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>inkmap</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<style>
+  html, body, #map { margin: 0; height: 100%; background: #c9b58a; }
+</style>
+</head>
+<body>
+<div id="map"></div>
+<script>
+  // The tile folder to show: ?region=arnhem. Tiles are served from ../tiles/<region>/.
+  const region = new URLSearchParams(location.search).get("region") || "arnhem";
+  fetch(`../tiles/${region}/meta.json`).then(r => r.json()).then(meta => {
+    const map = L.map("map", { crs: L.CRS.Simple, minZoom: 0, maxZoom: meta.maxZoom + 1 });
+    const bounds = [[-meta.height, 0], [0, meta.width]];
+    L.tileLayer(`../tiles/${region}/{z}/{x}/{y}.${meta.ext || "png"}`, {
+      minZoom: 0, maxNativeZoom: meta.maxZoom, maxZoom: meta.maxZoom + 1,
+      bounds, noWrap: true, attribution: meta.attribution,
+    }).addTo(map);
+    map.setMaxBounds(bounds);
+    map.fitBounds(bounds);
+  });
+</script>
+</body>
+</html>
